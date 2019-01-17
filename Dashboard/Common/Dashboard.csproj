@@ -17,8 +17,4 @@
     <ProjectReference Include="..\Core\Dashboard.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ClientApp\app\run\panel\cell\" />
-  </ItemGroup>
-
 </Project>

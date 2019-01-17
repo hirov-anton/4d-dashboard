@@ -16,13 +16,14 @@ export class ActivateRoute {
     constructor(private router: Router) { }
 
     canActivate(route: ActivatedRouteSnapshot): boolean {
-        if (this.isFirstNavigation) {
-            this.isFirstNavigation = false;
-            if (route.component !== InitComponent) {
-                this.router.navigateByUrl("");
-                return false;
-            }
-        }
+// TODO temp disabled!!!
+//        if (this.isFirstNavigation) {
+//            this.isFirstNavigation = false;
+//            if (route.component !== InitComponent) {
+//                this.router.navigateByUrl("");
+//                return false;
+//            }
+//        }
         return true;
     }
 }

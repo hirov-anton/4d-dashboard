@@ -11,9 +11,11 @@ body {
 }
 
 @media (max-width: map-get($grid-breakpoints, sm) - 1) {
-    .container {
-        padding: 0;
-    }
+    .container {padding: 0;}
+}
+
+@media (max-width: map-get($grid-breakpoints, md) - 1) {
+    .container {padding: 0;}
 }
 
 .btn-dark {

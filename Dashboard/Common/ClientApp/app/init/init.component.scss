@@ -1,20 +1,11 @@
 ﻿@import "../config/variables";
 
-div.row {
-    height: 100%;
-    margin: 0;
-
-    > div {
-        padding: 0;
-    }
-}
-
 .content {
-    @media (max-width: map-get($grid-breakpoints, sm) - 1) {
+    @media (max-width: map-get($grid-breakpoints, md) - 1) {
         height: 100%;
     }
 
-    @media (min-width: map-get($grid-breakpoints, sm)) {
+    @media (min-width: map-get($grid-breakpoints, md)) {
         margin-top: 150px;
     }
 
