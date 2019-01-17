@@ -4,7 +4,4 @@
     template: "<p>Panel</p>",
     styleUrls: ["./panel.component.scss"]
 })
-
-export class PanelComponent {
-    
-}
+export class PanelComponent {}

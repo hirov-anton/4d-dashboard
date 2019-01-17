@@ -6,8 +6,9 @@ import {
     ActivatedRouteSnapshot
     } from "@angular/router";
 
-import { PanelComponent } from "../panel/panel.component";
-import { InfoComponent }  from "../info/info.component";
+import { InitComponent } from "../init/init.component";
+import { DevComponent }  from "../dev/dev.component";
+import { RunComponent }  from "../run/run.component";
 
 @Injectable()
 export class ActivateRoute {
@@ -17,8 +18,8 @@ export class ActivateRoute {
     canActivate(route: ActivatedRouteSnapshot): boolean {
         if (this.isFirstNavigation) {
             this.isFirstNavigation = false;
-            if (route.component !== InfoComponent) {
-                this.router.navigateByUrl("/info");
+            if (route.component !== InitComponent) {
+                this.router.navigateByUrl("");
                 return false;
             }
         }
@@ -27,9 +28,10 @@ export class ActivateRoute {
 }
 
 const routes: Routes = [
-    { path: "panel", component: PanelComponent, canActivate: [ActivateRoute] },
-    { path: "info",  component: InfoComponent,  canActivate: [ActivateRoute] },
-    { path: "**",    redirectTo: "/info" }
+    { path: "dev", component: DevComponent,  canActivate: [ActivateRoute] },
+    { path: "run", component: RunComponent,  canActivate: [ActivateRoute] },
+    { path: "",    component: InitComponent, canActivate: [ActivateRoute] },
+    { path: "**",  redirectTo: "" }
 ];
 
 export const RoutingConfig = RouterModule.forRoot(routes);

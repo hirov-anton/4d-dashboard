@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\app\panel\cell\" />
+    <Folder Include="ClientApp\app\run\panel\cell\" />
   </ItemGroup>
 
 </Project>

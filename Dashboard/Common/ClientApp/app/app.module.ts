@@ -1,16 +1,21 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule }      from "@angular/core";
+import { NgModule } from "@angular/core";
 
-import { AppComponent }   from "./app.component";
-import { PanelComponent } from "./panel/panel.component";
-import { InfoComponent }  from "./info/info.component";
-import { ActivateRoute, RoutingConfig }  from "./config/config.routing";
+import { ActivateRoute, RoutingConfig } from "./config/routing";
+import { AppComponent } from "./app.component";
+import { InitModule }   from "./init/init.module";
+import { RunModule }    from "./run/run.module";
+import { DevModule }    from "./dev/dev.module";
+
 
 @NgModule({
-  declarations: [AppComponent, PanelComponent, InfoComponent],
-  imports: [BrowserModule, RoutingConfig],
-  providers: [ActivateRoute],
-  bootstrap: [AppComponent]
+    imports: [BrowserModule,
+              InitModule,
+              RunModule,
+              DevModule,
+              RoutingConfig],
+    declarations: [AppComponent],
+    providers: [ActivateRoute],
+    bootstrap: [AppComponent]
 })
-
-export class AppModule { }
+export class AppModule {}

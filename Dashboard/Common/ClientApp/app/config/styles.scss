@@ -1,0 +1,22 @@
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+@import "~font-awesome/css/font-awesome.css";
+
+html, body, .container {
+    height: 100%;
+}
+
+body {
+    font-family: monospace;
+}
+
+@media (max-width: map-get($grid-breakpoints, sm) - 1) {
+    .container {
+        padding: 0;
+    }
+}
+
+.btn-dark {
+    &:hover  {color: $success !important;}
+    &:active {color: $success !important;}
+}

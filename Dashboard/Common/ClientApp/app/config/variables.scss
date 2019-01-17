@@ -1,0 +1,22 @@
+﻿$dark:    #272727;
+$light:   #747474;
+$danger:  #FF652F;
+$warning: #FFE400;
+$success: #14A76C;
+$white:   #FFFFFF;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+
+$body-color: $dark;
+$paragraph-margin-bottom: 0;
+
+$btn-focus-width: 0;
+$btn-box-shadow:        none;
+$btn-focus-box-shadow:  none;
+$btn-active-box-shadow: none;

@@ -1,0 +1,62 @@
+﻿@import "../config/variables";
+
+div.row {
+    height: 100%;
+    margin: 0;
+
+    > div {
+        padding: 0;
+    }
+}
+
+.content {
+    @media (max-width: map-get($grid-breakpoints, sm) - 1) {
+        height: 100%;
+    }
+
+    @media (min-width: map-get($grid-breakpoints, sm)) {
+        margin-top: 150px;
+    }
+
+    height: 300px;
+    padding: 8px 0;
+    background-color: $dark;
+
+    > div {
+        height: 100%;
+        position: relative;
+        background-color: $white;
+
+        border-style: solid;
+        border-width: 16px 0 16px 0;
+        border-image: repeating-linear-gradient(-45deg, $dark, $dark 0.5rem,
+                                                $white 0.5rem, $white 1rem)
+                                                16 0 16 0;
+
+        > p {
+            font-weight: bold;
+            text-align: center;
+
+            &:first-of-type {
+                padding-top: 8px;
+                font-size: 2rem;
+            }
+
+            &:last-of-type {
+                font-size: 1.5rem;
+            }
+        }
+
+        > div {
+            bottom: 0;
+            position: absolute;
+
+            width: 100%;
+            padding-bottom: 8px;
+
+            button {
+                width: 100px;
+            }
+        }
+    }
+}
