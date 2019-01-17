@@ -22,7 +22,10 @@ Obj/
 .vs/
 
 # Dependencies
-node_modules
+node_modules/
 
 # Compiled output
-wwwroot
+wwwroot/
+
+# Publish profiles
+PublishProfiles/
