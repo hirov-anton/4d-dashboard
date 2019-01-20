@@ -6,10 +6,33 @@
         <link rel="icon" type="image/x-icon" href="app/favicon.ico">
         <title>Dashboard</title>
         <base href="/">
+        <style>
+            @keyframes spin {
+                0% {transform: rotate(0);}
+                100% {transform: rotate(360deg);}
+            }
+
+            #loader {
+                animation: spin 1.8s linear infinite;
+                margin: -130px 0 0 -104px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
-            <app-root></app-root>
+            <app-root>
+                <svg id="loader" height="208" width="208">
+                    <polygon points="14,52 194,52 104,208" style="fill: #272727;"/>
+                    <polygon points="44,69 164,69 104,173" style="fill: #FFFFFF;"/>
+                    <circle cx="104" cy="104" r="95" fill="transparent" stroke="#FFFFFF" stroke-width="18"/>
+                    <rect x="-3" y="0" height="104" width="6" style="fill: #FFFFFF" transform="translate(104,104) rotate(0)"></rect>
+                    <rect x="-3" y="0" height="104" width="6" style="fill: #FFFFFF" transform="translate(104,104) rotate(120)"></rect>
+                    <rect x="-3" y="0" height="104" width="6" style="fill: #FFFFFF" transform="translate(104,104) rotate(240)"></rect>
+                </svg>
+            </app-root>
         </div>
     </body>
 </html>
