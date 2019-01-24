@@ -1,4 +1,4 @@
-﻿@import "../config/variables";
+﻿@import "../common/variables";
 
 .content {
     @media (max-width: map-get($grid-breakpoints, md) - 1) {

@@ -1,6 +1,6 @@
 ﻿import { NgModule } from "@angular/core";
 
-import { RoutingConfig } from "../config/routing";
+import { RoutingConfig } from "../common/routing";
 import { InitComponent } from "./init.component";
 
 @NgModule({

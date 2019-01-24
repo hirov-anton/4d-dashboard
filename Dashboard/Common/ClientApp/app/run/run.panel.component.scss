@@ -1,0 +1,45 @@
+﻿@import "../common/variables";
+
+.panel {
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+
+    > button {
+        font-weight: bold;
+        display: block;
+        padding: 25% 0;
+        margin: 50% 0;
+        width: 2rem;
+    }
+
+    > button[disabled] {
+        background-color: $dark;
+        color: $white;
+        opacity: 1;
+    }
+}
+
+.panel-left {
+    left: 0;
+
+    > button {
+        border: {
+            left: 0;
+            top-left-radius: 0;
+            bottom-left-radius: 0;
+        }
+    }
+}
+
+.panel-right {
+    right: 0;
+
+    > button {
+        border: {
+            right: 0;
+            top-right-radius: 0;
+            bottom-right-radius: 0;
+        }
+    }
+}

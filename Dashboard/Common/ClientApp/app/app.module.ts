@@ -1,7 +1,7 @@
-import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { ActivateRoute, RoutingConfig } from "./config/routing";
+import { ActivateRoute, RoutingConfig } from "./common/routing";
 import { AppComponent } from "./app.component";
 import { InitModule }   from "./init/init.module";
 import { RunModule }    from "./run/run.module";

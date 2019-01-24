@@ -6,5 +6,12 @@
     styleUrls:  ["./cell.component.scss"]
 })
 export class CellComponent {
-    @Input() position: number;
+    items: number[];
+
+    ngOnInit() {
+        this.items = Array<number>(300).fill(null);
+    }
+
+    @Input()
+    position: number;
 }

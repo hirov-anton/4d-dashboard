@@ -1,18 +1,46 @@
-﻿<table>
-    <tr class="d-table-row d-sm-none d-md-table-row">
-        <td class="d-none d-md-table-cell">
-            <cell position="2"></cell>
-        </td>
-        <td>
-            <cell position="3"></cell>
-        </td>
-    </tr>
-    <tr>
-        <td class="d-none d-sm-table-cell">
-            <cell position="1"></cell>
-        </td>
-        <td>
-            <cell position="0"></cell>
-        </td>
-    </tr>
-</table>
+﻿<scssVariables></scssVariables>
+<div class="line row no-gutters d-sm-none d-md-flex">
+    <div class="col-12 col-sm-6 d-none d-md-block">
+        <div class="cell-container" data-position="2">
+            <cell data-position="2"></cell>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6">
+        <div class="cell-container" data-position="3">
+            <cell data-position="3"></cell>
+        </div>
+        <div class="panel panel-right d-sm-none">
+            <ng-container
+                *ngTemplateOutlet="panel_buttons"></ng-container>
+        </div>
+    </div>
+</div>
+<div class="line row no-gutters">
+    <div class="col-12 col-sm-6 d-none d-sm-block">
+        <div class="cell-container" data-position="1">
+            <cell data-position="1"></cell>
+        </div>
+        <div class="panel panel-left d-md-none">
+            <ng-container
+                *ngTemplateOutlet="panel_buttons"></ng-container>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6">
+        <div class="cell-container" data-position="0">
+            <cell data-position="0"></cell>
+        </div>
+    </div>
+</div>
+
+<ng-template #panel_buttons>
+    <button class="btn btn-outline-dark"
+            (click)="fullScreen.open()">
+        <fa-icon [icon]="icon" size="sm"></fa-icon>
+    </button>
+    <button *ngFor="let button of buttons.toArray()"
+            class="btn btn-outline-dark"
+            (click)="buttonService.click(button.id)"
+            [disabled]="button.isDisabled">
+        {{button.id}}
+    </button>
+</ng-template>
