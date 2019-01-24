@@ -6,9 +6,9 @@ export class Buttons {
 
     init(): void {
         this.buttons = new Array(3).fill(null);
-        Object.keys(this.buttons).forEach(key => {
-            const id = this.buttons.length - parseInt(key);
-            this.buttons[key] = new Button(id, true);
+        Object.keys(this.buttons).forEach(_ => {
+            const id = this.buttons.length - parseInt(_);
+            this.buttons[_] = new Button(id, true);
         });
     }
 

@@ -22,7 +22,7 @@ body {
     &:active {color: $success !important;}
 }
 
-@mixin define-custom-property($name, $value) {
+@mixin custom-property($name, $value) {
     #{custom-property-name($name)}: $value;
 }
 
@@ -32,6 +32,6 @@ body {
 
 :root {
     @each $name, $value in $grid-breakpoints {
-        @include define-custom-property($name, $value);
+        @include custom-property($name, $value);
     }
 }

@@ -33,10 +33,17 @@
 </div>
 
 <ng-template #panel_buttons>
-    <button class="btn btn-outline-dark"
-            (click)="fullScreen.open()">
-        <fa-icon [icon]="icon" size="sm"></fa-icon>
+    <button *ngIf="fullScreen.isOn(); else elseBlock"
+            class="btn btn-outline-dark"
+            (click)="fullScreen.off()">
+        <fa-icon [icon]="iconOff" size="sm"></fa-icon>
     </button>
+    <ng-template #elseBlock>
+        <button class="btn btn-outline-dark"
+                (click)="fullScreen.on()">
+            <fa-icon [icon]="iconOn" size="sm"></fa-icon>
+        </button>
+    </ng-template>
     <button *ngFor="let button of buttons.toArray()"
             class="btn btn-outline-dark"
             (click)="buttonService.click(button.id)"

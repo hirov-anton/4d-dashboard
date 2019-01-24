@@ -1,5 +1,5 @@
 ﻿import { Component, ViewChild, ViewChildren, HostListener, QueryList, ElementRef } from "@angular/core";
-import { faArrowsAlt } from "@fortawesome/free-solid-svg-icons";
+import { faArrowsAlt, faCompressArrowsAlt } from "@fortawesome/free-solid-svg-icons";
 
 import { ScssVariablesDirective } from "../common/directives/scss.variables.directive";
 import { FullScreen }    from "../common/services/fullscreen.service";
@@ -23,7 +23,8 @@ export class RunComponent {
     private rowCells: QueryList<ElementRef>;
 
     private timeoutId = null;
-    icon = faArrowsAlt;
+    iconOff = faCompressArrowsAlt;
+    iconOn = faArrowsAlt;
 
     constructor(private cells: Cells,
                 private buttons: Buttons,

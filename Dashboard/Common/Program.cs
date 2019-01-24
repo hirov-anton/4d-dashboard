@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 
 namespace Dashboard
 {
@@ -19,12 +13,10 @@ namespace Dashboard
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration(SetupConfiguration)
-                .UseStartup<Startup>();
+                   .ConfigureAppConfiguration(SetupConfiguration)
+                   .UseStartup<Startup>();
 
-        private static void SetupConfiguration(WebHostBuilderContext ctx, IConfigurationBuilder builder)
-        {
-
-        }
+        private static void SetupConfiguration(WebHostBuilderContext ctx,
+                                               IConfigurationBuilder builder) {}
     }
 }
