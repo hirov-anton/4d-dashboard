@@ -17,4 +17,8 @@
     <ProjectReference Include="..\Core\Dashboard.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ClientApp\app\common\directives\" />
+  </ItemGroup>
+
 </Project>

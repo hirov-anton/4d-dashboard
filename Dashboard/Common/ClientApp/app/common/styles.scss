@@ -1,5 +1,6 @@
 @import "variables";
 @import "~bootstrap/scss/bootstrap";
+@import "~quill/dist/quill.snow";
 
 html, body, .container {
     height: 100%;
@@ -20,18 +21,4 @@ body {
 .btn-dark {
     &:hover  {color: $success !important;}
     &:active {color: $success !important;}
-}
-
-@mixin custom-property($name, $value) {
-    #{custom-property-name($name)}: $value;
-}
-
-@function custom-property-name($name) {
-    @return "--" + $name;
-}
-
-:root {
-    @each $name, $value in $grid-breakpoints {
-        @include custom-property($name, $value);
-    }
 }

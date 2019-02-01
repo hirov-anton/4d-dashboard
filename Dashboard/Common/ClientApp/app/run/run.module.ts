@@ -1,8 +1,10 @@
 ﻿import { NgModule } from "@angular/core";
+import { ChartsModule }  from "ng2-charts";
+import { QuillModule }   from "ngx-quill";
 import { BrowserModule } from "@angular/platform-browser";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
-import { ScssVariablesDirective } from "../common/directives/scss.variables.directive";
+import { ScssVariables } from "../common/services/scss.variables.service";
 import { FullScreen }    from "../common/services/fullscreen.service";
 import { CellComponent } from "./cell/cell.component";
 import { RunComponent }  from "./run.component";
@@ -12,12 +14,14 @@ import { Buttons } from "./run.button.model";
 import { Cells }   from "./run.cell.model";
 
 @NgModule({
-    imports: [BrowserModule,
+    imports: [ChartsModule,
+              QuillModule,
+              BrowserModule,
               FontAwesomeModule],
-    declarations: [ScssVariablesDirective,
-                   CellComponent,
+    declarations: [CellComponent,
                    RunComponent],
     providers: [FullScreen,
+                ScssVariables,
                 ButtonService,
                 ResizeService,
                 Buttons,

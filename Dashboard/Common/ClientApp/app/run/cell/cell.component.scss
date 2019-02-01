@@ -4,3 +4,13 @@ p.title {
     text-align: center;
     font-size: 2rem;
 }
+
+canvas,
+quill-editor {
+    display: block;
+    margin: 0 2px;
+}
+
+quill-editor {
+    height: 100px;
+}

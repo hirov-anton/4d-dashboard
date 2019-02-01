@@ -1,6 +1,6 @@
 ﻿import { Injectable } from "@angular/core";
 
-import { ScssVariablesDirective } from "../common/directives/scss.variables.directive";
+import { ScssVariables } from "../common/services/scss.variables.service";
 import { Buttons } from "./run.button.model";
 import { Cells }   from "./run.cell.model";
 
@@ -8,13 +8,14 @@ import { Cells }   from "./run.cell.model";
 export class ResizeService
 {
     constructor(private cells: Cells,
-                private buttons: Buttons) {}
+                private buttons: Buttons,
+                private scssVariables: ScssVariables) { }
 
-    resize(scssVariales: ScssVariablesDirective): void {
+    resize(): void {
         const width = window.innerWidth;
-        if (width < scssVariales.getSize("sm")) {
+        if (width < this.scssVariables.getSize("sm")) {
             this.processButtons(3, false);
-        } else if (width < scssVariales.getSize("md")) {
+        } else if (width < this.scssVariables.getSize("md")) {
             this.processButtons(1, false);
         } else {
             const set = [];
@@ -30,7 +31,7 @@ export class ResizeService
         this.buttons.toArray().forEach(_ => _.isDisabled = isDisabled);
         if (cellId) {
             const id = this.cells.get(cellId).children().data("position");
-            this.buttons.get(parseInt(id)).isDisabled = true;
+            this.buttons.get(id).isDisabled = true;
         }
     }
 }

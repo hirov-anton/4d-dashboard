@@ -1,2 +1,18 @@
-﻿<p class="title">{{position == 0 ? "boxkit" : "cell " + position}}</p>
-<span *ngFor="let item of items">text </span>
+﻿<div *ngIf="position === 0
+         || position === 1">
+    <p class="title">{{position === 0 ? "Boxkit" : "Text"}}</p>
+    <span *ngFor="let item of items">text </span>
+</div>
+<div *ngIf="position === 2">
+    <p class="title">Chart</p>
+    <canvas baseChart height="216"
+            [options]="lineChartOptions"
+            [chartType]="lineChartType"
+            [datasets]="lineChartData"
+            [colors]="lineChartColors"
+            [labels]="lineChartLabels"></canvas>
+</div>
+<div *ngIf="position === 3">
+    <p class="title">Editor</p>
+    <quill-editor></quill-editor>
+</div>

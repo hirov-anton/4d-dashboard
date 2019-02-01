@@ -1,7 +1,6 @@
-﻿import { Component, ViewChild, ViewChildren, HostListener, QueryList, ElementRef } from "@angular/core";
+﻿import { Component, ViewChildren, HostListener, QueryList, ElementRef } from "@angular/core";
 import { faArrowsAlt, faCompressArrowsAlt } from "@fortawesome/free-solid-svg-icons";
 
-import { ScssVariablesDirective } from "../common/directives/scss.variables.directive";
 import { FullScreen }    from "../common/services/fullscreen.service";
 import { CellComponent } from "./cell/cell.component";
 import { ButtonService } from "./run.button.service";
@@ -16,9 +15,6 @@ import { Cells }   from "./run.cell.model";
                  "./run.panel.component.scss"]
 })
 export class RunComponent {
-    @ViewChild(ScssVariablesDirective)
-    private scssVariales: ScssVariablesDirective;
-
     @ViewChildren(CellComponent, { read: ElementRef })
     private rowCells: QueryList<ElementRef>;
 
@@ -35,7 +31,7 @@ export class RunComponent {
     ngAfterViewInit() {
         setTimeout(() => {
             this.cells.init(this.rowCells);
-            this.buttonService.init(this.scssVariales);
+            this.buttonService.init();
         });
     }
 
@@ -43,7 +39,7 @@ export class RunComponent {
     onResize() {
         clearTimeout(this.timeoutId);
         this.timeoutId = setTimeout(() => {
-            this.resizeService.resize(this.scssVariales);
+            this.resizeService.resize();
         }, 100);
     }
 }

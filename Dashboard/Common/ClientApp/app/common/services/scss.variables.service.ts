@@ -1,11 +1,9 @@
-﻿import { Directive } from "@angular/core";
+﻿import {Injectable} from "@angular/core";
 
-@Directive({
-    selector: "scssVariables"
-})
-export class ScssVariablesDirective {
+@Injectable()
+export class ScssVariables {
     getSize(name: string): number {
-        const size = this.get(name).slice(0, -2);
+        const size = this.get(`breakpoint-${name}`).slice(0, -2);
         return parseInt(size);
     }
 
