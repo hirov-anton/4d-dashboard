@@ -23,7 +23,7 @@
               "ClientApp/assets"
             ],
             "styles": [
-              "ClientApp/app/common/styles.scss"
+              "ClientApp/app/common/styles/global.scss"
             ],
             "scripts": []
           },
@@ -72,7 +72,7 @@
             "tsConfig": "ClientApp/tsconfig.spec.json",
             "karmaConfig": "ClientApp/karma.conf.js",
             "styles": [
-              "ClientApp/app/common/styles.scss"
+              "ClientApp/app/common/styles/global.scss"
             ],
             "scripts": [],
             "assets": [

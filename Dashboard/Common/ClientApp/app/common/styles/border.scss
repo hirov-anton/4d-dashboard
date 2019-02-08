@@ -1,0 +1,15 @@
+﻿@import "../common/styles/variables";
+
+@mixin border-image($t, $r, $b, $l) {
+    $width: 1rem/16;
+    border: {
+        style: solid;
+        width: $width*$t
+               $width*$r
+               $width*$b
+               $width*$l;
+        image: repeating-linear-gradient(-45deg, $dark, $dark 0.5rem,
+                                         $white 0.5rem, $white 1rem)
+                                         $t $r $b $l;
+    }
+}

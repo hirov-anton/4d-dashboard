@@ -1,6 +1,7 @@
 ﻿import { Component } from "@angular/core";
 
 @Component({
-    template: "<p>Build</p>"
+    templateUrl: "./dev.component.html",
+    styleUrls:  ["./dev.component.scss"]
 })
 export class DevComponent {}

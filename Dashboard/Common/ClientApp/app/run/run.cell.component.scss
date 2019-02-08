@@ -1,19 +1,5 @@
-﻿@import "../common/variables";
-
-@mixin border-image($r, $b) {
-    border: {
-        width: 0;
-        @if($r > 0) {
-            right-width: 0.25rem;
-        }
-        @if($b > 0) {
-            bottom-width: 0.25rem;
-        }
-        style: solid;
-        image: repeating-linear-gradient(-45deg, $dark, $dark 0.5rem,
-                                         $white 0.5rem, $white 1rem) 0 $r $b 0;
-    }
-}
+﻿@import "../common/styles/variables";
+@import "../common/styles/border";
 
 .cell-container {
     overflow-y: auto;
@@ -21,7 +7,7 @@
     height: 100%;
 
     &[data-position="1"] {
-        @include border-image(4, 0);
+        @include border-image(0, 4, 0, 0);
         direction: ltr;
 
         > cell {
@@ -33,12 +19,12 @@
     }
 
     &[data-position="2"] {
-        @include border-image(4, 4);
+        @include border-image(0, 4, 4, 0);
         direction: ltr;
     }
 
     &[data-position="3"] {
-        @include border-image(0, 4);
+        @include border-image(0, 0, 4, 0);
 
         > cell {
             @media (max-width: map-get($grid-breakpoints, sm) - 1) {

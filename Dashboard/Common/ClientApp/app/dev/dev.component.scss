@@ -1,0 +1,20 @@
+﻿@import "../common/styles/variables";
+@import "../common/styles/border";
+
+.content {
+    @media (min-width: map-get($grid-breakpoints, md)) {
+        margin-top: 150px;
+        height: 50%;
+    }
+
+    display: block;
+    height: 100%;
+}
+
+preview {
+    @media (max-width: map-get($grid-breakpoints, sm) - 1) {
+        @include border-image(0, 0, 8, 0);
+    }
+
+    @include border-image(0, 8, 0, 0);
+}

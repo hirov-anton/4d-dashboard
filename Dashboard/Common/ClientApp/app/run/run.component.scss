@@ -1,4 +1,4 @@
-﻿@import "../common/variables";
+﻿@import "../common/styles/variables";
 
 .line {
     @media (min-width: map-get($grid-breakpoints, sm))
